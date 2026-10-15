@@ -126,5 +126,5 @@ fi
 
 jq -e '.success == true and (.assetId > 0) and (.downloadUrl | startswith("https://assets.xogot.com/"))' "$response_file" >/dev/null
 jq '{assetId, downloadUrl, fileName, success}' "$response_file" > upload-result.json
-sha256sum build.zip > build.zip.sha256
+shasum -a 256 build.zip > build.zip.sha256
 success "Zip upload verified and published"
