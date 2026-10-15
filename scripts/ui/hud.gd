@@ -37,6 +37,8 @@ func _ready() -> void:
 	_msg_base_y = message_label.position.y
 	score_pop.modulate.a = 0.0
 	hint_label.visible = false
+	if OS.get_name() == "iOS" or not Input.get_connected_joypads().is_empty():
+		hint_label.text = "X: next weapon"
 	_health_fill = health_bar.get_theme_stylebox("fill").duplicate()
 	health_bar.add_theme_stylebox_override("fill", _health_fill)
 	$PauseMenu/Panel/Buttons/Resume.pressed.connect(toggle_pause)
