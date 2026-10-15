@@ -23,6 +23,8 @@ Built for the next Letta Corporation video.
 | Escape | pause (resume, restart, menu, music and sound toggles) |
 | F1 (development only) | hold to snap to the concept image's camera, with the concept's two bandits posed, for the side by side comparisons |
 
+Xogot’s iOS virtual controller is enabled. Use the left stick to move and the right stick to look. A fires, B aims, X cycles unlocked weapons, and Y pauses. In menus, move with the left stick or D-pad and press A to select (including Resume). On a physical controller, the right/left triggers also fire/aim, the shoulders cycle weapons, and Start pauses. Keyboard and mouse controls remain available.
+
 You start with the blaster, the pistol and the knife; the other eleven weapons are crates around the yard, the strongest ones far out. Walk into one to unlock it; it comes back 45 s later as an ammo refill. Knives and the shovel are held in the left hand, the one the swing uses. Sandbags and containers stop the bandits' shots; theirs come in bursts of three. Bear traps cost 20 health and hold you for a moment, landmines 30; fire burns 10 per second.
 
 ### Running the tests

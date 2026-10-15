@@ -262,6 +262,10 @@ func _input_state() -> Dictionary:
 
 
 func _physics_process(delta: float) -> void:
+	if alive and controls_enabled and not wheel_open and input_override == null:
+		# Stick deflection is a turn rate, independent of the display frame rate.
+		var stick := Input.get_vector("look_left", "look_right", "look_up", "look_down")
+		look(stick * (150.0 / MOUSE_DEG_PER_PX) * delta)
 	var st := _input_state() if (alive and controls_enabled) else {"move": Vector2.ZERO, "fire": false, "aim": false}
 	aiming = st.get("aim", false)
 	firing = st.get("fire", false)

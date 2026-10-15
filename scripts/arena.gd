@@ -79,10 +79,11 @@ func _ready() -> void:
 
 
 func _tutorial() -> void:
-	hud.message("WASD to move, mouse to aim, hold left click to fire", 4.0, 1.9)
+	var controller := OS.get_name() == "iOS" or not Input.get_connected_joypads().is_empty()
+	hud.message("Left stick: move. Right stick: look. A: fire. B: aim. Y: pause" if controller else "WASD to move, mouse to aim, hold left click to fire", 4.0, 1.9)
 	await get_tree().create_timer(6.0, false).timeout
 	if running and spawner.wave == 1:
-		hud.message("Weapons are hidden around the yard. Hold Tab to choose one", 4.0)
+		hud.message("Weapons are hidden around the yard. Press X to switch" if controller else "Weapons are hidden around the yard. Hold Tab to choose one", 4.0)
 		hud.show_hint(10.0)
 	await get_tree().create_timer(5.5, false).timeout
 	if running and spawner.wave == 1:
